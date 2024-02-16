@@ -1,0 +1,137 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Variables
+@import 'partials/variables';
+@import 'partials/utilities';
+
+* {
+    background-color: $pf-dark;
+    color: $pf-light;
+}
+
+.nav-link:hover {
+    color: $pf-primary;
+    filter: brightness(140%);
+}
+
+.dropdown-menu {
+    background-color: $pf-dark;
+
+    .dropdown-item {
+        color: $pf-light;
+
+        &:hover {
+            background-color: $pf-dark;
+        }
+    }
+}
+
+.dashboard_box {
+    padding: 1rem;
+    border: 1px solid $pf-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .box_title {}
+
+    .box_body {}
+}
+
+.card {
+    border-radius: 0;
+    border: 1px solid $pf-primary;
+    background-color: transparent;
+    color: $pf-light;
+
+    .card-img-bottom {
+        border-radius: 0;
+    }
+}
+
+.btn_primary {
+    border: 1px solid $pf-primary;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    color: $pf-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: $pf-light;
+        color: $pf-dark;
+    }
+
+    &:hover svg {
+        background-color: $pf-light;
+        fill: $pf-dark;
+    }
+}
+
+.table {
+    --bs-table-color: var(--bs-emphasis-color);
+    --bs-table-bg: $pf-dark;
+    --bs-table-border-color: $pf-primary;
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: var(--bs-emphasis-color);
+    --bs-table-striped-bg: rgba(var(--bs-emphasis-color-rgb), 0.05);
+    --bs-table-active-color: var(--bs-emphasis-color);
+    --bs-table-active-bg: rgba(var(--bs-emphasis-color-rgb), 0.1);
+    --bs-table-hover-color: var(--bs-emphasis-color);
+    --bs-table-hover-bg: rgba(var(--bs-emphasis-color-rgb), 0.075);
+    border-color: $pf-primary;
+
+    &> :not(caption)>*>* {
+        color: $pf-light;
+    }
+
+    .project_cover_image {
+        width: 200px;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.pagination {
+    --bs-pagination-color: $pf-primary;
+    --bs-pagination-bg: $pf-dark;
+    --bs-pagination-border-color: $pf-primary;
+    --bs-pagination-hover-border-color: $pf-primary;
+    --bs-pagination-focus-color: $pf-primary;
+    --bs-pagination-focus-bg: $pf-primary;
+    --bs-pagination-active-color: $pf-light;
+    --bs-pagination-active-bg: $pf-primary;
+    --bs-pagination-active-border-color: $pf-primary;
+    --bs-pagination-border-radius: 0;
+    margin: 0;
+    border-radius: 0;
+
+    & .page-item {
+
+        &.active {
+            background-color: $pf-primary;
+
+            & .page-link {
+                color: $pf-light;
+            }
+        }
+
+        & .page-link {
+            color: $pf-primary;
+            border: var(--bs-pagination-border-width) solid $pf-primary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    & p.small.text-muted {
+        display: none;
+    }
+}
