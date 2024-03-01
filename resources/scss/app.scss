@@ -9,8 +9,25 @@
 @import 'partials/utilities';
 
 * {
-    background-color: $pf-dark;
     color: $pf-light;
+}
+
+body {
+    background-color: $pf-dark;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: $pf-light;
+    -webkit-box-shadow: 0 0 0px 1000px $pf-dark inset;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 .nav-link:hover {
@@ -36,10 +53,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    .box_title {}
-
-    .box_body {}
 }
 
 .card {
@@ -57,6 +70,7 @@
     border: 1px solid $pf-primary;
     padding: .5rem 1rem;
     text-decoration: none;
+    background-color: $pf-dark;
     color: $pf-light;
     display: flex;
     justify-content: center;
@@ -133,5 +147,127 @@
 
     & p.small.text-muted {
         display: none;
+    }
+}
+
+.form-floating {
+
+    label {
+        padding: .5rem;
+        transition: all .1s ease;
+    }
+
+    .form-select {
+        background-color: transparent;
+        color: $pf-light;
+        border: 0;
+        border-radius: 0;
+        border-bottom: 1px solid $pf-light;
+        font-size: .8rem;
+
+        &~label {
+            color: $pf-light;
+            font-size: .8rem;
+
+            &::after {
+                background-color: $pf-dark;
+            }
+        }
+
+
+        &:focus {
+            box-shadow: 0 0 20px 0rem $pf-primary;
+            border-radius: var(--bs-border-radius);
+
+            &~label {
+                color: $pf-light;
+                padding: 1rem .75rem;
+                transition: all .1s ease;
+
+                &::after {
+                    background-color: $pf-dark;
+                }
+            }
+
+            &>option {
+                background-color: $pf-dark;
+                color: $pf-light;
+
+                /* &:hover {
+                    background-color: $pf-dark;
+                } */
+            }
+
+        }
+    }
+
+    .form-control {
+        color: $pf-light;
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+        border-bottom: 1px solid $pf-light;
+
+        &:not(:placeholder-shown) {
+            &~label {
+                color: $pf-light;
+                padding: 1rem .75rem;
+                transition: all .1s ease;
+
+                &::after {
+                    background-color: $pf-dark;
+                }
+            }
+        }
+
+        &:focus {
+            box-shadow: 0 0 20px 0rem $pf-primary;
+            border-radius: var(--bs-border-radius);
+
+            &~label {
+                color: $pf-light;
+                padding: 1rem .75rem;
+                transition: all .1s ease;
+
+                &::after {
+                    background-color: $pf-dark;
+                }
+            }
+        }
+    }
+
+    .form-check-input {
+        border-radius: 0;
+        border-color: $pf-primary;
+        background-color: $pf-dark;
+
+        &:focus {
+            box-shadow: 0 0 .5rem 0.1rem $pf-primary;
+        }
+    }
+
+}
+
+.form-floating input[type=file].form-control::file-selector-button {
+    background-color: $pf-dark;
+    color: $pf-light;
+    border: 1px solid transparent;
+}
+
+.form-floating input[type=file].form-control:hover::file-selector-button {
+    background-color: $pf-light;
+    color: $pf-dark;
+    border: 1px solid $pf-primary;
+}
+
+.alert {
+    strong {
+        color: $pf-dark;
+    }
+
+    ul {
+        li {
+            color: $pf-dark;
+        }
     }
 }
