@@ -87,6 +87,27 @@ select:-webkit-autofill:focus {
     }
 }
 
+.btn_danger {
+    border: 1px solid $pf-primary;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    background-color: $pf-dark;
+    color: $pf-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: $pf-danger;
+        color: $pf-light;
+    }
+
+    &:hover svg {
+        background-color: transparent;
+        fill: $pf-light;
+    }
+}
+
 .table {
     --bs-table-color: var(--bs-emphasis-color);
     --bs-table-bg: $pf-dark;
@@ -269,5 +290,16 @@ select:-webkit-autofill:focus {
         li {
             color: $pf-dark;
         }
+    }
+}
+
+.modal-content {
+    color: $pf-light;
+    background-color: $pf-dark;
+    border: 1px solid $pf-primary;
+    border-radius: 0;
+
+    &>* {
+        border-color: $pf-primary;
     }
 }

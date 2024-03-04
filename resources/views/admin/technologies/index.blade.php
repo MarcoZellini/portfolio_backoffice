@@ -111,14 +111,14 @@
                                                         Danger! This cannot be undone.
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
+                                                        <button type="button" class="btn_primary"
                                                             data-bs-dismiss="modal">Close</button>
                                                         <form
                                                             action="{{ route('admin.technologies.destroy', $technology->slug) }}"
                                                             method="POST">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger">
+                                                            <button type="submit" class="btn_danger">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                     height="16" fill="currentColor" class="bi bi-trash"
                                                                     viewBox="0 0 16 16">
