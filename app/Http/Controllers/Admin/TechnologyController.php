@@ -45,7 +45,7 @@ class TechnologyController extends Controller
     {
         return view('admin.technologies.show', [
             'technology' => $technology,
-            'projects' => $technology->projects
+            'projects' => $technology->projects()->paginate(10)
         ]);
     }
 

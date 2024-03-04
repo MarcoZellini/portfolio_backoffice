@@ -48,7 +48,7 @@ class TypeController extends Controller
             'admin.types.show',
             [
                 'type' => $type,
-                'projects' => Project::all()->where('type_id', '=', $type->id)
+                'projects' => Project::where('type_id', $type->id)->paginate(10)
             ]
         );
     }
