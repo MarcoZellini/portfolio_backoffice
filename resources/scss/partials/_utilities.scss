@@ -4,6 +4,18 @@
     color: $pf-primary;
 }
 
+.text_light {
+    color: $pf-light;
+}
+
 .bg_dark {
     background-color: $pf-dark;
+}
+
+.badge_primary {
+    border: 1px solid $pf-primary;
+    padding: .15rem .35rem;
+    font-size: .8rem;
+    color: $pf-light;
+    background-color: transparent;
 }
