@@ -22,7 +22,8 @@
             <h2 class="mb-4">New Project</h2>
 
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="title" id="title" placeholder="">
+                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title"
+                    placeholder="">
                 <label for="title">Title</label>
             </div>
 
@@ -71,8 +72,8 @@
                 <label for="github_link">GitHub Link</label>
             </div>
             <div class="form-floating mb-3">
-                <textarea class="form-control" name="description" id="description" rows="5"
-                    placeholder="Insert project description">{{ old('descritpion') }}</textarea>
+                <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
+                    rows="5" placeholder="Insert project description">{{ old('descritpion') }}</textarea>
                 <label for="description" class="form-label @error('description') is-invalid @enderror">Description</label>
             </div>
             <button type="submit" class="btn_primary">Create New Project</button>
