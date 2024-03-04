@@ -3,29 +3,35 @@
 @section('page-title', 'Admin - Create Technology')
 
 @section('content')
-    @if ($errors->any())
-        <div class="alert alert-danger" role="alert">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li><strong>Error! </strong> {{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
-    <form action="{{ route('admin.technologies.store') }}" method="POST" class="my-5">
 
-        @csrf
+    <div class="container">
+        @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li><strong>Error! </strong> {{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-        <h2 class="mb-4">Add New Technology</h2>
+        <form action="{{ route('admin.technologies.store') }}" method="POST" class="my-5">
 
-        <div class="mb-4">
-            <label for="name" class="form-label">Add Name</label>
-            <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror"
-                placeholder="Insert Technology name" aria-describedby="helpId" value="{{ old('name') }}">
-        </div>
+            @csrf
 
-        <button type="submit" class="btn btn-primary">Create New Technology</button>
+            <h2 class="mb-4">Add New Technology</h2>
 
-    </form>
+
+            <div class="form-floating mb-3">
+                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror"
+                    placeholder="Insert Technology name" aria-describedby="helpId" value="{{ old('name') }}">
+                <label for="name" class="form-label">Add Name</label>
+
+            </div>
+
+            <button type="submit" class="btn_primary">Create New Technology</button>
+
+        </form>
+    </div>
 @endsection
