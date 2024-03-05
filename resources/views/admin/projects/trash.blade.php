@@ -185,7 +185,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td>There aren't projects! 😒</td>
+                            <td colspan="4">There aren't projects! 😒</td>
                         </tr>
                     @endforelse
 
