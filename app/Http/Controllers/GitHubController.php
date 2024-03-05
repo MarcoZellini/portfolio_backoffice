@@ -16,7 +16,6 @@ class GitHubController extends Controller
 
         //sostituire la richiesta quando le chiamate a github si sbloccano
         $response = Http::withoutVerifying()->withHeader('Authorization', 'Bearer ' . env('GITHUB_API_TOKEN'))->get("https://api.github.com/users/{$author}/repos?sort=created&direction=asc&per_page=100");
-        // dd($response);
 
         $repositories = $response->json();
 

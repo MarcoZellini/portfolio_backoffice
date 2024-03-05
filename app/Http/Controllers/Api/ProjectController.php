@@ -16,6 +16,14 @@ class ProjectController extends Controller
         ]);
     }
 
+    public function favourite_projects()
+    {
+        return response()->json([
+            'status' => 'success',
+            'projects' => Project::with(['type', 'technologies'])->where('is_favourite', true)->orderByDesc('id')->paginate(6)
+        ]);
+    }
+
     public function latest_projects()
     {
         return response()->json([

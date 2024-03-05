@@ -71,13 +71,6 @@
             </div>
 
             <div class="form-floating mb-3">
-                <input type="file" name="cover_image" id="cover_image"
-                    class="image_input form-control @error('cover_image') is-invalid @enderror"
-                    placeholder="Insert project image" aria-describedby="helpId">
-                <label for="cover_image" class="form-label">Image</label>
-            </div>
-
-            <div class="form-floating mb-3">
                 <input type="url" name="website_link" id="website_link"
                     class="form-control @error('website_link') is-invalid @enderror" placeholder="Edit project website link"
                     aria-describedby="helpId" value="{{ old('website_link', $project->website_link) }}">
@@ -98,6 +91,19 @@
                     placeholder="Edit project description">{{ old('descritpion', $project->description) }}</textarea>
                 <label for="description" class="form-label @error('description') is-invalid @enderror">Edit
                     Description</label>
+            </div>
+
+            <label for="is_favourite" class="form-label @error('favourite') is-invalid @enderror">
+                Add to Favorite?</label>
+            <div class="form-check mb-3">
+                <input type="radio" name="is_favourite" id="favourite" value="1"
+                    @if ($project->is_favourite) checked @endif>
+                <label for="favourite" class="from-label">Yes</label>
+            </div>
+            <div class="form-check mb-3">
+                <input type="radio" name="is_favourite" id="favourite" value="0"
+                    @if (!$project->is_favourite) checked @endif>
+                <label for="favourite" class="from-label">No</label>
             </div>
 
             <button type="submit" class="btn_primary">Edit Project</button>

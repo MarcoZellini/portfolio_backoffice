@@ -76,8 +76,22 @@
                     rows="5" placeholder="Insert project description">{{ old('descritpion') }}</textarea>
                 <label for="description" class="form-label @error('description') is-invalid @enderror">Description</label>
             </div>
-            <button type="submit" class="btn_primary">Create New Project</button>
 
+            <label for="is_favourite" class="form-label @error('favourite') is-invalid @enderror">
+                Add to Favorite?
+            </label>
+            <div class="form-check mb-3">
+                <input type="radio" name="is_favourite" id="favourite" value="1"
+                    @if (old('is_favourite')) checked @endif>
+                <label for="favourite" class="from-label">Yes</label>
+            </div>
+            <div class="form-check mb-3">
+                <input type="radio" name="is_favourite" id="favourite" value="0"
+                    @if (!old('is_favourite')) checked @endif>
+                <label for="favourite" class="from-label">No</label>
+            </div>
+
+            <button type="submit" class="btn_primary">Create New Project</button>
         </form>
     </div>
 @endsection

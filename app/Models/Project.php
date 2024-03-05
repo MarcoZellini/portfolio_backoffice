@@ -14,7 +14,7 @@ class Project extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['title', 'slug', 'description', 'cover_image', 'type_id', 'github_link', 'website_link'];
+    protected $fillable = ['title', 'is_favourite', 'slug', 'description', 'cover_image', 'type_id', 'github_link', 'website_link'];
 
 
     public function type(): BelongsTo
